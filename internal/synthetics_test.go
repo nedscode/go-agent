@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/newrelic/go-agent/internal/cat"
-	"github.com/newrelic/go-agent/internal/crossagent"
+	"github.com/nedscode/go-agent/internal/cat"
+	"github.com/nedscode/go-agent/internal/crossagent"
 )
 
 type harvestedTxnTrace struct {

@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/newrelic/go-agent/internal"
-	"github.com/newrelic/go-agent/internal/cat"
+	"github.com/nedscode/go-agent/internal"
+	"github.com/nedscode/go-agent/internal/cat"
 )
 
 // SegmentStartTime is created by Transaction.StartSegmentNow and marks the

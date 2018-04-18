@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/newrelic/go-agent/internal"
-	"github.com/newrelic/go-agent/internal/utilization"
+	"github.com/nedscode/go-agent/internal"
+	"github.com/nedscode/go-agent/internal/utilization"
 )
 
 var (

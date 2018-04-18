@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/newrelic/go-agent/internal/logger"
+	"github.com/nedscode/go-agent/internal/logger"
 )
 
 func TestLicenseInvalid(t *testing.T) {

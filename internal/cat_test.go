@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/newrelic/go-agent/internal/crossagent"
+	"github.com/nedscode/go-agent/internal/crossagent"
 )
 
 type eventAttributes map[string]interface{}

@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 
-	newrelic "github.com/newrelic/go-agent"
-	"github.com/newrelic/go-agent/_integrations/nrlogrus"
+	newrelic "github.com/nedscode/go-agent"
+	"github.com/nedscode/go-agent/_integrations/nrlogrus"
 	"github.com/sirupsen/logrus"
 )
 

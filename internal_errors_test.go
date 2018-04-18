@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/newrelic/go-agent/internal"
+	"github.com/nedscode/go-agent/internal"
 )
 
 type myError struct{}
