@@ -59,6 +59,10 @@ type AdvancedTransaction interface {
 	// with the *url.URL being pulled from that request
 	SetWeb(web bool, url *url.URL)
 
+	// SetRequestAttributes allows one to populate the other internal attributes
+	// that are not normally accessable
+	SetRequestAttributes(method string, header http.Header)
+
 	// SetCrossProcess will configure the required CrossProcess infromation
 	// normally extracted from the *http.Request.Headers
 	SetCrossProcess(id, txnData, synthetics string)

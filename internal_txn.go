@@ -88,6 +88,25 @@ func (txn *txn) SetWeb(web bool, url *url.URL) {
 	}
 }
 
+func (txn *txn) SetRequestAttributes(method string, header http.Header) {
+	txn.Attrs.Agent.RequestMethod = method
+
+	if nil == header {
+		return
+	}
+
+	txn.Attrs.Agent.RequestAcceptHeader = header.Get("Accept")
+	txn.Attrs.Agent.RequestContentType = header.Get("Content-Type")
+	txn.Attrs.Agent.RequestHeadersHost = header.Get("Host")
+	txn.Attrs.Agent.RequestHeadersUserAgent = header.Get("User-Agent")
+	txn.Attrs.Agent.RequestHeadersReferer = internal.SafeURLFromString(header.Get("Referer"))
+
+	// Per NewAttributes(), the default for this field is -1 (which is also what
+	// GetContentLengthFromHeader() returns if no content length is found), so we
+	// can just use the return value unconditionally.
+	txn.Attrs.Agent.RequestContentLength = int(internal.GetContentLengthFromHeader(header))
+}
+
 func (txn *txn) SetCrossProcess(id, txnData, synthetics string) {
 	txn.CrossProcess.Init(txn.crossProcessEnabled(), txn.txnInput.Reply, internal.CrossProcessMetadata{
 		ID:         id,
