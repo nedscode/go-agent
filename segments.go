@@ -173,7 +173,8 @@ func StartExternalSegment(txn Transaction, request *http.Request) ExternalSegmen
 //    segment.End()
 //
 func StartAdvancedExternalSegment(ctxn AdvancedTransaction, name, url string) AdvancedExternalSegment {
-	txn := ctxn.(wrap)
+	txn := ctxn.(*txn)
+
 	metadata, err := txn.CrossProcess.CreateCrossProcessMetadata(txn.Name, txn.Config.AppName)
 	if err != nil {
 		txn.Config.Logger.Debug("error generating outbound headers", map[string]interface{}{
